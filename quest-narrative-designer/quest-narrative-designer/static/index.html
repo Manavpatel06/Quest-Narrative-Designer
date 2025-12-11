@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quest Narrative Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quest Narrative Designer</h1>
+      <p>Create structured, production-ready quests from high-level design briefs.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Design Brief</h2>
+      <form id="brief-form">
+        <div class="field-row">
+          <label for="zone">Zone</label>
+          <input type="text" id="zone" name="zone" placeholder="e.g., Shattered Desert" required />
+        </div>
+        <div class="field-row">
+          <label for="faction">Faction</label>
+          <input type="text" id="faction" name="faction" placeholder="e.g., Sandbound Nomads" required />
+        </div>
+        <div class="field-row">
+          <label for="tone">Tone</label>
+          <input type="text" id="tone" name="tone" placeholder="e.g., mysterious, hopeful" required />
+        </div>
+        <div class="field-row two-column">
+          <div>
+            <label for="level-min">Player Level Min</label>
+            <input type="number" id="level-min" name="player_level_min" min="1" value="10" required />
+          </div>
+          <div>
+            <label for="level-max">Player Level Max</label>
+            <input type="number" id="level-max" name="player_level_max" min="1" value="15" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <label for="style">Narrative Style (optional)</label>
+          <input type="text" id="style" name="narrative_style" placeholder="e.g., character-driven, epic" />
+        </div>
+        <div class="field-row two-column">
+          <div>
+            <label for="steps">Number of Steps (3–8)</label>
+            <input type="number" id="steps" name="number_of_steps" min="3" max="8" value="4" />
+          </div>
+          <div>
+            <label for="playtime">Target Playtime (minutes, optional)</label>
+            <input type="number" id="playtime" name="target_playtime_minutes" min="5" />
+          </div>
+        </div>
+        <div class="field-row">
+          <label for="forbidden">Forbidden Elements (comma-separated)</label>
+          <input type="text" id="forbidden" name="forbidden_elements" placeholder="e.g., time travel, dragons" />
+        </div>
+        <button type="submit" class="primary">Generate Quest</button>
+      </form>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Quest Preview</h2>
+      <div id="quest-view" class="quest-view empty">
+        <p>No quest generated yet. Fill out the brief and click <strong>Generate Quest</strong>.</p>
+      </div>
+
+      <div id="regenerate-controls" class="regenerate-controls hidden">
+        <h3>Refine Quest</h3>
+        <div class="regenerate-buttons">
+          <button data-section="title">Regenerate Title</button>
+          <button data-section="summary">Regenerate Summary</button>
+        </div>
+        <div class="regenerate-step">
+          <label for="step-index">Regenerate Step (0-based index)</label>
+          <input type="number" id="step-index" min="0" value="0" />
+          <button id="regenerate-step-button" data-section="steps">Regenerate Step</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Raw JSON</h2>
+      <pre id="json-output" class="json-output">// Generated quest JSON will appear here</pre>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

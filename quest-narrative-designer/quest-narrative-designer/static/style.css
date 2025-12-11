@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #050816;
+  color: #f5f5f5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: #c7c7d9;
+}
+
+.panel {
+  background: #0b1020;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #25294a;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.field-row {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-row label {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: #c7c7d9;
+}
+
+.field-row input,
+.field-row textarea {
+  padding: 0.5rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #2b3357;
+  background: #050816;
+  color: #f5f5f5;
+  font-size: 0.95rem;
+}
+
+.field-row input:focus,
+.field-row textarea:focus {
+  outline: none;
+  border-color: #5b8dee;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #5b8dee;
+  color: #fff;
+  font-weight: 600;
+}
+
+button.primary:hover {
+  background: #4871c2;
+}
+
+.status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.status.loading {
+  color: #f5c16c;
+}
+
+.status.error {
+  color: #ff6b6b;
+}
+
+.status.success {
+  color: #7ee787;
+}
+
+.quest-view.empty {
+  color: #7b7b91;
+}
+
+.quest-view h3 {
+  margin-top: 0;
+}
+
+.quest-meta {
+  font-size: 0.9rem;
+  color: #c7c7d9;
+  margin-bottom: 0.5rem;
+}
+
+.quest-steps {
+  margin-top: 0.5rem;
+}
+
+.quest-step {
+  margin-bottom: 0.6rem;
+  padding: 0.5rem;
+  background: #0f172a;
+  border-radius: 4px;
+}
+
+.quest-step h4 {
+  margin: 0 0 0.2rem;
+  font-size: 0.95rem;
+}
+
+.quest-step p {
+  margin: 0.1rem 0;
+  font-size: 0.9rem;
+}
+
+.quest-dialogue {
+  margin-top: 0.25rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid #25294a;
+}
+
+.quest-dialogue p {
+  margin: 0.1rem 0;
+  font-size: 0.85rem;
+}
+
+.quest-dialogue span.speaker {
+  font-weight: 600;
+}
+
+.json-output {
+  background: #050816;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  max-height: 340px;
+  overflow: auto;
+  border: 1px solid #25294a;
+}
+
+.regenerate-controls.hidden {
+  display: none;
+}
+
+.regenerate-controls {
+  margin-top: 0.75rem;
+}
+
+.regenerate-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.regenerate-buttons button {
+  background: #2b3357;
+  color: #f5f5f5;
+}
+
+.regenerate-buttons button:hover {
+  background: #37406a;
+}
+
+.regenerate-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.regenerate-step input {
+  width: 80px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+}
