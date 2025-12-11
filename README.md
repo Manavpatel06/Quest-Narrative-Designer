@@ -167,13 +167,6 @@ If you receive validation errors from the LLM response, check:
 - The JSON structure matches the expected Quest schema
 - The `speaker` field in dialogue is exactly `"NPC"` or `"PLAYER"`
 
-## License
-
-This project is licensed under the MIT License.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
